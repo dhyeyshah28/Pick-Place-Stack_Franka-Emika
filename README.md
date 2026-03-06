@@ -10,7 +10,7 @@
 <div align="center">
 
 <p float="left">
-  <img src="images/sim_stack.png" alt="Robot Setup" width="35%" />
+  <img src="images/sim_stack.png" alt="Robot Setup" width="55%" />
   <img src="images/competition_stack.jpg" alt="Competition Stack" width="35%" />
 </p>
 
@@ -142,7 +142,7 @@ Total Score = Σ (Points for each block)
 
 <div align="center">
 <p float="left">
-  <img src="images/methodology_sequence.png" alt="Block Detection Simulation" width="35%" />
+  <img src="images/methodology_sequence.png" alt="Block Detection Simulation" width="55%" />
   <img src="images/r_viz2.jpg" alt="Block Detection Hardware" width="35%" />
 </p>
 </div>
@@ -327,8 +327,8 @@ def move_to_block_RRT(q_start, q_goal, obstacles):
 
 <div align="center">
 <p float="left">
-  <img src="images/cam_view_sim_irl.png" alt="Block Detection Hardware" width="35%" />
-  <img src="images/sim_stack.png" alt="Block Detection Simulation" width="35%" />
+  <img src="images/cam_view_sim_irl.png" alt="Block Detection Hardware" width="65%" />
+  <img src="images/ideal_stack.png" alt="Block Detection Simulation" width="35%" />
 </p>
 </div>
 
@@ -455,12 +455,6 @@ def calcManipulability(q_in):
     """
 ```
 ---
-
-<div align="center">
-<p float="left">
-  <img src="images/ideal_stack.png" alt="Block Detection Hardware" width="35%" />
-</p>
-</div>
 
 ## 📚 Lessons Learned
 

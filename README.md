@@ -11,7 +11,7 @@
 
 <p float="left">
 <img src="images/competition_stack.jpg" alt="Competition Stack" width="35%" />
-  <img src="images/sim_stack.png" alt="Robot Setup" width="48%" />
+  <img src="images/sim_stack.png" alt="Robot Setup" width="51%" />
 </p>
 
 </div>
@@ -328,7 +328,7 @@ def move_to_block_RRT(q_start, q_goal, obstacles):
 <div align="center">
 <p float="left">
   <img src="images/cam_view_sim_irl.png" alt="Block Detection Hardware" width="65%" />
-  <img src="images/ideal_stack.png" alt="Block Detection Simulation" width="35%" />
+  <img src="images/ideal_stack.png" alt="Block Detection Simulation" width="30%" />
 </p>
 </div>
 

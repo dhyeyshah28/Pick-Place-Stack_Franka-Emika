@@ -10,8 +10,8 @@
 <div align="center">
 
 <p float="left">
-  <img src="images/sim_stack.png" alt="Robot Setup" width="55%" />
-  <img src="images/competition_stack.jpg" alt="Competition Stack" width="35%" />
+<img src="images/competition_stack.jpg" alt="Competition Stack" width="35%" />
+  <img src="images/sim_stack.png" alt="Robot Setup" width="48%" />
 </p>
 
 </div>

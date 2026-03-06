@@ -10,8 +10,8 @@
 <div align="center">
 
 <p float="left">
-  <img src="images/robot_setup.jpg" alt="Robot Setup" width="45%" />
-  <img src="images/competition_stack.jpg" alt="Competition Stack" width="45%" />
+  <img src="images/sim_stack.png" alt="Robot Setup" width="35%" />
+  <img src="images/competition_stack.jpg" alt="Competition Stack" width="35%" />
 </p>
 
 </div>
@@ -30,9 +30,6 @@
   - [4. Dynamic Block Prediction](#4-dynamic-block-prediction)
   - [5. Motion Planning Comparison](#5-motion-planning-comparison)
 - [Performance Results](#-performance-results)
-- [Installation & Setup](#-installation--setup)
-- [Usage](#-usage)
-- [Repository Structure](#-repository-structure)
 - [Key Algorithms](#-key-algorithms)
   - [1. Forward Kinematics](#1-forward-kinematics)
   - [2. Jacobian Calculation](#2-jacobian-calculation)
@@ -145,8 +142,8 @@ Total Score = Σ (Points for each block)
 
 <div align="center">
 <p float="left">
-  <img src="images/block_detection_sim.jpg" alt="Block Detection Simulation" width="45%" />
-  <img src="images/block_detection_hardware.jpg" alt="Block Detection Hardware" width="45%" />
+  <img src="images/methodology_sequence.png" alt="Block Detection Simulation" width="35%" />
+  <img src="images/r_viz2.jpg" alt="Block Detection Hardware" width="35%" />
 </p>
 </div>
 
@@ -328,6 +325,14 @@ def move_to_block_RRT(q_start, q_goal, obstacles):
 
 ## 📊 Performance Results
 
+<div align="center">
+<p float="left">
+  <img src="images/cam_view_sim_irl.png" alt="Block Detection Hardware" width="35%" />
+  <img src="images/sim_stack.png" alt="Block Detection Simulation" width="35%" />
+</p>
+</div>
+
+
 ### Competition Performance
 
 - **Final Placement**: 🥉 **3rd Place**
@@ -365,154 +370,6 @@ Total Runtime: ~256 seconds (avg)
     ├── Detection & Tracking: ~40s
     ├── Prediction & Motion: ~85s
     └── Stacking: ~10s
-```
-
----
-
-## 🚀 Installation & Setup
-This portion of my repository contains all the necessary code and instructions needed to set up the environment using the Franka Emika Panda robot.
-
-### Prerequisites
-
-```bash
-# System Requirements
-- Ubuntu 20.04 LTS
-- ROS Noetic
-- Python 3.8+
-- Gazebo 11
-```
-
-### Step 1: Clone Repository
-
-```bash
-# Clone your forked repo
-cd ~/meam520_ws/src/
-git clone https://github.com/YOUR_USERNAME/meam520_labs.git
-cd meam520_labs
-```
-
-### Step 2: Install Dependencies
-
-```bash
-# Install ROS packages
-sudo apt install ros-noetic-velocity-controllers
-sudo apt install ros-noetic-ros-control
-
-# Install Python packages
-pip3 install numba
-sudo pip install --upgrade scipy
-pip3 install numpy opencv-python apriltag
-```
-
-### Step 3: Build Workspace
-
-```bash
-cd ~/meam520_ws/
-catkin_make_isolated
-source devel_isolated/setup.bash
-```
-
-### Step 4: Verify Installation
-
-```bash
-# Test forward kinematics
-cd ~/meam520_ws/src/meam520_labs/
-python3 -c "from lib.calculateFK import FK; print('FK module loaded successfully')"
-
-# Test inverse kinematics
-python3 -c "from lib.IK_velocity import IK_velocity; print('IK module loaded successfully')"
-```
-
----
-
-## 💻 Usage
-
-### Simulation Environment
-
-#### Launch Red Team
-
-```bash
-roslaunch meam520_labs final.launch team:=red
-```
-
-#### Launch Blue Team
-
-```bash
-roslaunch meam520_labs final.launch team:=blue
-```
-
-### Hardware Testing
-
-#### Step 1: Launch Vision Pipeline
-
-```bash
-# Ask TA for camera number
-roslaunch meam520_labs vision_pipeline.launch camera_number:=<CAMERA_NUM>
-```
-
-#### Step 2: Initialize Robot Interface
-
-```bash
-# In new terminal
-./franka.sh master
-```
-
-#### Step 3: Launch Robot Controller
-
-```bash
-roslaunch franka_interface interface_final.launch team:={blue|red}
-```
-
-#### Step 4: Run Your Code
-
-```bash
-cd ~/meam520_ws/src/meam520_labs/labs/final/
-python3 final.py
-```
-
----
-
-## 📁 Repository Structure
-
-```
-meam520_labs/
-├── labs/
-│   └── final/
-│       ├── final.py                    # Main control script
-│       ├── potentialFieldPlanner.py    # Alternative planner
-│       └── rrt.py                      # RRT implementation
-│
-├── lib/
-│   ├── calculateFK.py                  # Forward kinematics
-│   ├── calculateFKJac.py               # FK with Jacobian
-│   ├── calcJacobian.py                 # Jacobian computation
-│   ├── calcAngDiff.py                  # Angular difference
-│   ├── calcManipulability.py           # Manipulability analysis
-│   ├── IK_velocity.py                  # Velocity-level IK
-│   ├── IK_velocity_null.py             # IK with null-space
-│   ├── FK_velocity.py                  # Forward velocity kinematics
-│   └── detectCollision.py              # Collision detection
-│
-├── core/
-│   └── interfaces.py                   # ArmController, ObjectDetector
-│
-├── maps/
-│   ├── map1.txt                        # Test environment 1
-│   ├── map2.txt                        # Test environment 2
-│   └── map3.txt                        # Test environment 3
-│
-├── docs/
-│   ├── MEAM520_Final_Project_Instructions.pdf
-│   ├── MEAM5200_Final_Project.pdf
-│   └── MEAM5200_Final_Project_Report.pdf
-│
-├── images/
-│   ├── robot_setup.jpg
-│   ├── competition_stack.jpg
-│   ├── block_detection_sim.jpg
-│   └── block_detection_hardware.jpg
-│
-└── README.md                           # This file
 ```
 
 ---
@@ -599,6 +456,12 @@ def calcManipulability(q_in):
 ```
 ---
 
+<div align="center">
+<p float="left">
+  <img src="images/ideal_stack.png" alt="Block Detection Hardware" width="35%" />
+</p>
+</div>
+
 ## 📚 Lessons Learned
 
 ### ✅ What Worked Well
@@ -682,7 +545,7 @@ def calcManipulability(q_in):
 2. Lynch, K. M., & Park, F. C. (2017). *Modern Robotics: Mechanics, Planning, and Control*
 3. Craig, J. J. (2005). *Introduction to Robotics: Mechanics and Control*
 
-### Technical Papers
+### Technical Papers Referred
 
 1. Khatib, O. (1986). Real-time obstacle avoidance for manipulators and mobile robots. *IJRR*.
 2. LaValle, S. M. (1998). Rapidly-exploring random trees: A new tool for path planning.
